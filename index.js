@@ -16,7 +16,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/api/stake', StakeRoute);
 
-const url = `mongodb://${process.env.MONGODB_URL}:${process.env.MONGODB_PORT}/staking`;
+const url = process.env.MONGODB_URL;
 mongoose.connect(url, { useNewUrlParser: true });
 const con = mongoose.connection;
 
